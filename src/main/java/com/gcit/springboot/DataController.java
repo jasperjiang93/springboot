@@ -15,9 +15,9 @@ public class DataController {
     private JdbcTemplate jdbcTemplate;
 
 
-    @RequestMapping("/")
+    @RequestMapping("/data")
     public String index() {
-        String sql = "SELECT name FROM Employee where id = ?";
+        String sql = "SELECT AUTHORNAME FROM TBL_AUTHOR where AUTHORID = ?";
         String name = (String)jdbcTemplate.queryForObject(sql,new Object[] { 1 }, String.class);
         return name;
     }
